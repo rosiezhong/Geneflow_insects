@@ -13,3 +13,8 @@ The command to run this R script is as follows. The depth files should be genera
 ```
 Rscript make_bedfiles.R depth1.txt depth2.txt species.vcf bedfiles_directory
 ```
+Then, use the bedfiles to process individual vcfs
+```
+count=$(find "Path/to/bedfiles_dir" -type f | wc -l)
+for INDEX in $(seq 1 "$count"); do bcftools view -Ov -R /bedfiles_dir/Species${INDEX}.bed Species.vcf.gz > indiv_vcf_dir/Species${INDEX}.vcf; done
+```
