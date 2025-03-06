@@ -91,6 +91,7 @@ This is the length of the reference genome
 This is the number of randomly sampled vcf files to run SINGER over. We specified vcf_num as 100 for my project.
 
 >SINGER_DIR=
+
 This is the directory you installed SINGER in. The script currently only uses beta 0.1.7.
 
 >mutation rate
