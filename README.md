@@ -5,18 +5,18 @@ The data used in this study were collected, sequenced and assembled by the darwi
 This template script is used to run through all the steps of pre-alignment processing, genome alignment, variant calling and further processing to prepare the files for gene flow analysis. The pipeline has been optimised where possible to minimise time taken and computational costs. For reference genomes ~200Mb (using whole-genome query files), it takes roughly 5 days to complete. For reference genomes ~60Mb, it takes 1-2 days to complete. Smaller references genomes can be completed within a day.
 
 ### Code dependencies
-The tools needed to run this script are<br/>
+The tools needed to run this script are:<br/>
 minimap2/2.24<br/>
 HTSlib/1.14<br/>
 SAMtools/1.16.1<br/>
 R/4.4.0<br/>
 BCFtools/1.14<br/>
 
-Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are<br/>
+Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are:<br/>
 seqkit/2.8.2-1<br/>
 BBMap/39.09-0<br/>
 
-The packages required by the R script used are<br/>
+The packages required by the R script used are:<br/>
 dplyr/1.1.4<br/>
 VcfR/1.15.0<br/>
 data.table/1.15.0<br/>
@@ -42,7 +42,7 @@ This is the directory you will submit your job from. This is primarily used to c
 
 > WOR_DIR=
 
-Additional scripts needed to run this script are split.sh, chr1.sh(if you are only using the first chromosome of the reference genome) and make_bedfiles.R. This is the folder that all these files are stored in.
+Additional scripts needed to run this script are split.sh, chr1.sh(if you are only using the first chromosome of the reference genome) and make_bedfiles.R. This is the folder that all these files are stored in. All additional scripts needed are provided in this repository.
 
 
 
