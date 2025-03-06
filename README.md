@@ -15,6 +15,11 @@ BCFtools/1.14<br/>
 Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are:<br/>
 seqkit/2.8.2-1<br/>
 BBMap/39.09-0<br/>
+Since conda environment paths and names are created by you, please remember to write add the command to load them in the script:
+```
+module load Anaconda3/2023.09-0
+source activate <name of conda environment>
+```
 
 The packages required by the R script used are:<br/>
 dplyr/1.1.4<br/>
@@ -43,6 +48,7 @@ This is the directory you will submit your job from. This is primarily used to c
 > WOR_DIR=
 
 Additional scripts needed to run this script are split.sh, chr1.sh(if you are only using the first chromosome of the reference genome) and make_bedfiles.R. This is the folder that all these files are stored in. All additional scripts needed are provided in this repository.
+
 
 
 
