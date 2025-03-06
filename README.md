@@ -15,7 +15,7 @@ BCFtools/1.14<br/>
 Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are:<br/>
 seqkit/2.8.2-1<br/>
 BBMap/39.09-0<br/>
-Since conda environment paths and names are created by you, please remember to write add the command to load them in the script:
+Since conda environment paths and names are created by you, remember to add the command to activate it in the script:
 ```
 module load Anaconda3/2023.09-0
 source activate <name of conda environment>
@@ -49,6 +49,57 @@ This is the directory you will submit your job from. This is primarily used to c
 
 Additional scripts needed to run this script are split.sh, chr1.sh(if you are only using the first chromosome of the reference genome) and make_bedfiles.R. This is the folder that all these files are stored in. All additional scripts needed are provided in this repository.
 
+## Template.singer.slurm
+This script randomly samples a specified _vcf_num_ number of vcf files for gene flow analysis. It constructs Ancestral Recombination Graphs(ARGs), converts them into tree sequence files, and then classifies them into corresponding tree categories.
 
+### Code dependencies
+A virtual python environment, containing the packages are required:<br/>
+numPY<br/>
+tskit/0.60<br/>
+Please see how to create a virtual python environment using [Venv](https://docs.python.org/3/library/venv.html). Remember to add the command to activate it in the script:
+```
+module load Python/3.9.6-GCCcore-11.2.0
+source <path_to_virtual_env>/bin/activate
+```
+This script generates ARGs from vcf files using the bioinformatics tool SINGER. Please see how to install the tool on its [github page]("https://github.com/popgenmethods/SINGER"). We have only tested the beta 1.17 version.
 
+### Using the script
+The script is designed to be run over different datasets with minimal editing. This script is designed for a SLURM scheduling system, so adjust accordingly. When running the script over a different species, only the following fields need to be edited(most fields are at the top of the script):
 
+>VAR_DIR=
+
+This is the directory path used to store your vcf files after the variant calling step. It is the same directory as the one used in Template.pipeline.slurm
+
+>TREE_DIR=
+
+This is the directory path used to store your tree sequence(.tskit) files.
+
+>species=
+
+This is the name of the species studied.
+
+>ratio=
+
+This is the ratio value used
+
+>end=
+
+This is the length of the reference genome
+
+>vcf_num=
+
+This is the number of randomly sampled vcf files to run SINGER over. We specified vcf_num as 100 for my project.
+
+>SINGER_DIR=
+This is the directory you installed SINGER in. The script currently only uses beta 0.1.7.
+
+>mutation rate
+
+This can be found in this line, after the -m flag, set as default 2.9e-9. It was not added to the editable field at the top of the script due to formatting issues. It is easiest specified using scientific notation.
+```
+"$SINGER_DIR/singer-0.1.7/singer_master" -m 2.9e-9 -ratio "$ratio" -vcf "$line" -output "$VAR_DIR/${species}.arg/${filename}.arg" -start 0 -end "$end" -n 100 -thin 20
+```
+
+> WOR_DIR=
+
+It is the same directory as the one used in Template.pipeline.slurm. It is used to store tree_type.py, a script needed to run Template.singer.slurm.
