@@ -4,7 +4,7 @@
 #SBATCH --mem=100g
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=240:00:00
-#SBATCH -o /data/zool-barralab/biol0249/working/output/%x.o
+#SBATCH -o /Path/%x.o
 
 module load minimap2/2.24-GCCcore-11.3.0
 module load HTSlib/1.14-GCC-11.2.0
