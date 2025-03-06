@@ -5,21 +5,21 @@ The data used in this study were collected, sequenced and assembled by the darwi
 This template script is used to run through all the steps of pre-alignment processing, genome alignment, variant calling and further processing to prepare the files for gene flow analysis. The pipeline has been optimised where possible to minimise time taken and computational costs. For reference genomes ~200Mb (using whole-genome query files), it takes roughly 5 days to complete. For reference genomes ~60Mb, it takes 1-2 days to complete. Smaller references genomes can be completed within a day.
 
 ### Code dependencies
-The tools needed to run this script are
-minimap2/2.24
-HTSlib/1.14
-SAMtools/1.16.1
-R/4.4.0
-BCFtools/1.14
+The tools needed to run this script are<br/>
+minimap2/2.24<br/>
+HTSlib/1.14<br/>
+SAMtools/1.16.1<br/>
+R/4.4.0<br/>
+BCFtools/1.14<br/>
 
-Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are
-seqkit/2.8.2-1
-BBMap/39.09-0
+Further dependencies were installed using a conda environment. Additional packages needed(and corresponding dependencies auto downloaded by conda) are<br/>
+seqkit/2.8.2-1<br/>
+BBMap/39.09-0<br/>
 
-The packages required by the R script used are
-dplyr/1.1.4
-VcfR/1.15.0
-data.table/1.15.0
+The packages required by the R script used are<br/>
+dplyr/1.1.4<br/>
+VcfR/1.15.0<br/>
+data.table/1.15.0<br/>
 
 ### Using the script
 The script is designed to be run over different datasets with minimal editing. This script is designed for a SLURM scheduling system, so adjust accordingly. When running the script over a different species, only the following fields need to be edited(all fields are at the top of the script):
