@@ -103,4 +103,4 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 
 > WOR_DIR=
 
-It is the same directory as the one used in Template.pipeline.slurm. It is used to store tree_type.py, a script needed to run Template.singer.slurm. tree_type.py is provided in this repository.
+An additional script needed to run this script is tree_type.py. This is the folder that this files is stored in. All additional scripts needed are provided in this repository.
