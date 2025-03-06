@@ -62,7 +62,7 @@ numPY<br/>
 tskit/0.60<br/>
 Please see how to create a virtual python environment using [Venv](https://docs.python.org/3/library/venv.html). Remember to add the command to activate it in the script:
 ```
-module load Python/3.9.6-GCCcore-11.2.0
+module load Python/3.9.6
 source <path_to_virtual_env>/bin/activate
 ```
 This script generates ARGs from vcf files using the bioinformatics tool [SINGER](https://github.com/popgenmethods/SINGER). Please see how to install the tool on its github page. We have only tested the beta 1.17 version.
