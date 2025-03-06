@@ -9,8 +9,6 @@
 module load minimap2/2.24-GCCcore-11.3.0
 module load HTSlib/1.14-GCC-11.2.0
 module load SAMtools/1.16.1-GCC-11.3.0
-module load Anaconda3/2023.09-0
-source activate /home/biol0249/genomes
 module load R/4.4.0-gfbf-2023a
 
 species_dir=
