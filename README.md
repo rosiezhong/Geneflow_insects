@@ -7,7 +7,7 @@ The data used in this study were collected, sequenced and assembled by the darwi
 ## Template.pipeline.slurm
 This template script is used to run through all the steps of pre-alignment processing, genome alignment, variant calling and further processing to prepare the files for gene flow analysis. The pipeline has been optimised where possible to minimise time taken and computational costs. For reference genomes ~200Mb (using whole-genome query files), it takes roughly 5 days to complete. For reference genomes ~60Mb, it takes 1-2 days to complete. Smaller references genomes can be completed within a day.
 
-### Code dependencies
+### Dependencies
 The tools needed to run this script are:<br/>
 minimap2/2.24<br/>
 HTSlib/1.14<br/>
@@ -55,7 +55,7 @@ Additional scripts needed to run this script are split.sh, chr1.sh(if you are on
 ## Template.singer.slurm
 This script randomly samples a specified _vcf_num_ number of vcf files for gene flow analysis. It constructs Ancestral Recombination Graphs(ARGs), converts them into tree sequence files, and then classifies them into corresponding tree categories.
 
-### Code dependencies
+### Dependencies
 A virtual python environment, containing the packages are required:<br/>
 numPY<br/>
 tskit/0.60<br/>
