@@ -1,3 +1,6 @@
+This is the code written for my OFYP project, <ins>Gene flow analysis using high-quality genome assemblies reveals porous/closed species boundaries between UK insect sister-species</ins>. The workflow is optimized for high-quality genome assemblies that applies Ancestral Recombination Graphs (ARGs) to detect gene flow.
+
+
 ## Data used
 The data used in this study were collected, sequenced and assembled by the darwin tree of life project, taken from [Darwin Tree of Life](https://www.darwintreeoflife.org/data/). Hence, all codes and analysis described are designed for whole-genome assembly data, such as the ones provided by the site.
 
