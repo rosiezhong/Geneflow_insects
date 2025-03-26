@@ -53,6 +53,9 @@ This is the directory you will submit your job from. This is primarily used to c
 
 Additional scripts needed to run this script are split.sh, chr1.sh(if you are only using the first chromosome of the reference genome) and make_bedfiles.R. This is the folder that all these files are stored in. All additional scripts needed are provided in this repository.
 
+### Output
+A directory named <species>.phased.vcfs will be created where you specified VAR_DIR, along with the associated bed files used to extract those vcfs stored in <species>.bedfiles. The vcf files stored in <species>.phased.vcfs are the vcf files required to run the next step.
+
 ## Template.singer.slurm
 This script randomly samples a specified _vcf_num_ number of vcf files for gene flow analysis. It constructs Ancestral Recombination Graphs(ARGs), converts them into tree sequence files, and then classifies them into corresponding tree categories.
 
@@ -108,6 +111,9 @@ This can be found in this line, after the -m flag, set as default 2.9e-9. It was
 > WOR_DIR=
 
 An additional script needed to run this script is tree_type.py. This is the folder that this file is stored in. All additional scripts needed are provided in this repository. tree_type.py was provided by Tymek Pieszko
+
+### Output
+A file named <species>.tree.txt will be created where you specified TREE_DIR. It is a tab delimited file containing information on the relevant trees and their relative proportions. 
 
 ## Running simulations
 This study uses [msprime](https://tskit.dev/msprime/docs/stable/intro.html) to run simulations on Jupyter Notebook. The code used to generate simulations is
